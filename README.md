@@ -2,6 +2,8 @@
 
 **Key Kalimba** is an interactive, web-based 17-key Kalimba trainer and tuner. Play along with falling notes, load custom MIDI songs, and tune your physical instrument with built-in pitch detection—directly in your browser on desktop, tablet, and mobile devices.
 
+👉 **[Play Live Web App](https://keykalimba.netlify.app/)**
+
 ---
 
 ## Features
