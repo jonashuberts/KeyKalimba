@@ -104,10 +104,40 @@ html, body {
   text-align: center;
 }
 
-@media screen and (orientation: portrait) {
-  #portrait-overlay {
+#portrait-overlay.dismissed {
+  display: none !important;
+}
+
+/* Only prompt to rotate device on actual mobile/touch devices held in portrait mode */
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
+  #portrait-overlay:not(.dismissed) {
     display: flex;
   }
+}
+
+.portrait-dismiss-btn {
+  margin-top: 1.5rem;
+  padding: 0.625rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.portrait-dismiss-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+.portrait-dismiss-btn:active {
+  transform: scale(0.98);
 }
 
 #root {
