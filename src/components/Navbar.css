@@ -153,8 +153,13 @@
   font-weight: 400;
 }
 
-.sparkle-icon {
-  color: #ffdd00;
+.support-icon {
+  color: #ff5e5b;
+  transition: transform 0.2s ease;
+}
+
+.support-item:hover .support-icon {
+  transform: scale(1.15);
 }
 
 .ext-icon {

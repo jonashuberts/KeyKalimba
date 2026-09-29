@@ -50,11 +50,11 @@ npm run build
 
 ---
 
-## Kalimba MIDIs & Support
+## Support & Keep it Ad-Free
 
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-Download%20Kalimba%20MIDIs-ff5e5b?style=for-the-badge&logo=kofi&logoColor=white)](https://ko-fi.com/keykalimba)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20KeyKalimba-ff5e5b?style=for-the-badge&logo=kofi&logoColor=white)](https://ko-fi.com/keykalimba)
 
-Download ready-to-play Kalimba `.mid` files or support the ongoing open-source development.
+Support the free, open-source, and ad-free development of KeyKalimba on Ko-fi to help keep it running and accessible for everyone into the future.
 
 ---
 

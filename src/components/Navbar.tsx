@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, Square, FileMusic, Minus, Plus, Mic, Hash, Upload, Sparkles, ExternalLink, Sliders } from 'lucide-react';
+import { Play, Pause, Square, FileMusic, Minus, Plus, Mic, Hash, Upload, Heart, ExternalLink, Sliders } from 'lucide-react';
 import { TUNINGS } from '../constants/kalimba';
 import './Navbar.css';
 
@@ -228,13 +228,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                     href="https://ko-fi.com/keykalimba" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="midi-dropdown-item"
+                    className="midi-dropdown-item support-item"
                     onClick={() => setIsMidiMenuOpen(false)}
                   >
-                    <Sparkles size={16} className="sparkle-icon" />
+                    <Heart size={16} className="support-icon" fill="currentColor" />
                     <div className="dropdown-item-text">
-                      <span className="dropdown-title">Get Songs (Ko-fi)</span>
-                      <span className="dropdown-desc">Download ready-to-play MIDIs</span>
+                      <span className="dropdown-title">Support Project</span>
+                      <span className="dropdown-desc">Keep it free, ad-free & alive</span>
                     </div>
                     <ExternalLink size={13} className="ext-icon" />
                   </a>
