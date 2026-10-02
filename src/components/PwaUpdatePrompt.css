@@ -1,32 +1,33 @@
 .pwa-update-banner {
   position: fixed;
-  top: calc(4.15rem + env(safe-area-inset-top));
+  top: calc(90px + env(safe-area-inset-top));
   left: 50%;
   transform: translateX(-50%);
-  z-index: 99990;
+  z-index: 9998;
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.4rem 0.8rem 0.4rem 0.7rem;
-  background: rgba(30, 30, 34, 0.88);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.2);
+  gap: 0.75rem;
+  padding: 0.45rem 0.95rem 0.45rem 0.8rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--glass-highlight), 0 16px 36px rgba(0, 0, 0, 0.5);
   color: var(--text-primary);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
-  animation: pwaSlideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: apple-pop-down 0.4s var(--spring-bounce) forwards;
+  white-space: nowrap;
 }
 
-@keyframes pwaSlideDown {
-  from {
+@keyframes apple-pop-down {
+  0% {
+    transform: translate(-50%, -100%) scale(0.85);
     opacity: 0;
-    transform: translate(-50%, -10px) scale(0.96);
   }
-  to {
-    opacity: 1;
+  100% {
     transform: translate(-50%, 0) scale(1);
+    opacity: 1;
   }
 }
 
@@ -34,11 +35,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: rgba(127, 90, 240, 0.2);
   color: #a78bfa;
+  flex-shrink: 0;
 }
 
 .pwa-update-text {
@@ -55,22 +57,23 @@
 }
 
 .pwa-update-desc {
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.68rem;
+  color: var(--text-tertiary);
 }
 
 .pwa-update-actions {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin-left: 0.3rem;
+  margin-left: 0.25rem;
+  flex-shrink: 0;
 }
 
 .pwa-update-btn {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.35rem 0.75rem;
+  padding: 0.32rem 0.75rem;
   border-radius: 999px;
   background: #7f5af0;
   color: #fff;
@@ -95,12 +98,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   border: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-tertiary);
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -110,10 +113,20 @@
   color: #fff;
 }
 
-/* Mobile responsive tweak */
+/* Mobile landscape: Navbar is slightly more compact, adjust top position */
+@media (max-height: 600px) and (orientation: landscape) {
+  .pwa-update-banner {
+    top: calc(75px + env(safe-area-inset-top));
+    padding: 0.35rem 0.75rem 0.35rem 0.65rem;
+  }
+
+  .pwa-update-desc {
+    display: none; /* Hide subtitle on very small landscape screens for maximum compact elegance */
+  }
+}
+
 @media (max-width: 600px) {
   .pwa-update-banner {
-    top: calc(3.85rem + env(safe-area-inset-top));
     max-width: calc(100vw - 2rem);
   }
 }
